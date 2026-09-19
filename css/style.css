@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-    --bg: linear-gradient(90deg,rgb(236, 239, 255) 0%, rgb(236, 249, 255) 59%, rgba(224, 230, 255, 1) 100%);;
+    --bg: linear-gradient(90deg,rgb(236, 239, 255) 0%, rgb(236, 249, 255) 59%, rgba(224, 230, 255, 1) 100%);
     --surface: #e7ebf7;
     --surface-hover: #7e90cf;
     --text: #0b002e;
@@ -448,6 +448,8 @@ body {
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -457,6 +459,17 @@ a {
 
 ul {
     list-style: none;
+}
+
+/* CONTAINER */
+.container {
+    width: min(var(--max-width), 92%);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
 }
 
 /* NAVBAR */
@@ -471,7 +484,7 @@ header {
 .navbar {
     width: min(var(--max-width), 92%);
     margin: 18px auto;
-    padding: 5px 10px;
+    padding: 10px 14px;
     background: var(--bg);
     border: 2px solid var(--border);
     border-radius: var(--radius);
@@ -573,7 +586,7 @@ nav ul {
 
     .navbar {
         margin: 10px auto;
-        padding: 5px 10px;
+        padding: 8px 12px;
     }
 
     .logo-img {
@@ -588,11 +601,11 @@ nav ul {
 
     nav ul {
         position: absolute;
-        top: 72px;
-        left: 0;
-        width: 100%;
-        padding: 12px;
-        margin-top: 0.5rem;
+        top: calc(100% + 6px);
+        left: 8px;
+        right: 8px;
+        padding: 14px 12px;
+        margin-top: 0;
         display: none;
         flex-direction: column;
         align-items: stretch;
@@ -608,7 +621,9 @@ nav ul {
 
     .menu a {
         text-align: center;
-        padding: 13px;
+        padding: 14px 12px;
+        margin: 2px 0;
+        border-radius: 10px;
     }
 
     .menu.resume a {
@@ -1152,6 +1167,7 @@ nav ul {
 
     .hero-container {
         width: 94%;
+        padding: 0 16px;
     }
 
     .hero h1 {
@@ -1165,6 +1181,7 @@ nav ul {
     .hero-description {
         font-size: .9rem;
         line-height: 1.7;
+        padding: 0 8px;
     }
 
     .hero-visual {
@@ -1750,6 +1767,7 @@ nav ul {
 
     .edu__head {
         margin-bottom: 40px;
+        padding: 0 16px;
     }
 
     .edu__title {
@@ -1758,6 +1776,7 @@ nav ul {
 
     .edu__subtitle {
         font-size: .88rem;
+        padding: 0 8px;
     }
 
     .eduTimeline::before {
@@ -2503,6 +2522,7 @@ nav ul {
 
     .contact__head {
         margin-bottom: 40px;
+        padding: 0 16px;
     }
 
     .contact__title {
@@ -2511,6 +2531,7 @@ nav ul {
 
     .contact__subtitle {
         font-size: .87rem;
+        padding: 0 8px;
     }
 
     .contact-info,
@@ -2575,9 +2596,7 @@ nav ul {
 .footer {
     position: relative;
 
-    margin-top: 50px;
-    margin: 20px;
-
+    margin: 20px auto;
     padding: 70px 0 25px;
 
     border-top: 1px solid var(--border);
@@ -2825,6 +2844,7 @@ nav ul {
 
     .footer {
         padding: 55px 0 22px;
+        margin: 20px 16px;
     }
 
     .footer-main {
