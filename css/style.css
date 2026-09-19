@@ -2896,3 +2896,844 @@ nav ul {
         gap: 8px;
     }
 }
+
+/* =========================================================
+   FINAL RESPONSIVE LAYOUT / SPACING FIX
+   Keeps the existing visual design while normalizing all
+   desktop, tablet and mobile spacing.
+========================================================= */
+
+:root{
+    --content-max: 1200px;
+    --page-gutter: 32px;
+    --section-space: 96px;
+    --nav-offset: 96px;
+}
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+html{
+    scroll-padding-top:var(--nav-offset);
+}
+
+body{
+    min-width:320px;
+}
+
+/* Prevent images and form controls from creating overflow */
+img,
+svg,
+video,
+canvas{
+    display:block;
+    max-width:100%;
+}
+
+button,
+input,
+textarea,
+select{
+    max-width:100%;
+}
+
+/* =========================
+   GLOBAL CONTAINERS
+========================= */
+
+.container,
+.hero-container{
+    width:min(var(--content-max), calc(100% - var(--page-gutter)));
+    max-width:var(--content-max);
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:0;
+    padding-right:0;
+}
+
+.container{
+    position:relative;
+}
+
+.section{
+    width:100%;
+    padding:var(--section-space) 0;
+}
+
+.section > .container{
+    width:min(var(--content-max), calc(100% - var(--page-gutter)));
+}
+
+/* Remove accidental first/last child spacing */
+section > :first-child{
+    margin-top:0;
+}
+
+section > :last-child{
+    margin-bottom:0;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    left:0;
+    right:0;
+    width:100%;
+}
+
+.navbar{
+    width:min(var(--content-max), calc(100% - var(--page-gutter)));
+    margin:16px auto 0;
+    padding:10px 14px;
+}
+
+nav{
+    width:100%;
+    min-height:54px;
+}
+
+nav ul{
+    margin:0;
+    padding:0;
+}
+
+.logo{
+    min-width:0;
+}
+
+.logo h3{
+    white-space:nowrap;
+}
+
+.menu a{
+    white-space:nowrap;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    width:100%;
+    min-height:100svh;
+    padding:150px 0 90px;
+}
+
+.hero-container{
+    min-height:calc(100svh - 240px);
+    gap:clamp(30px, 5vw, 80px);
+}
+
+.hero-content,
+.hero-visual{
+    min-width:0;
+}
+
+.hero-content{
+    width:100%;
+}
+
+.hero-description{
+    width:100%;
+}
+
+.hero-buttons{
+    width:100%;
+}
+
+.hero-btn{
+    min-height:46px;
+}
+
+.hero-visual{
+    width:100%;
+    min-height:520px;
+}
+
+.hero-image-wrapper{
+    width:min(450px, 100%);
+}
+
+.hero-image{
+    max-width:100%;
+}
+
+.scroll-indicator{
+    bottom:24px;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+
+#education{
+    width:100%;
+}
+
+.eduTimeline{
+    width:100%;
+}
+
+.eduItem,
+.eduCard2,
+.eduCard2__grid,
+.eduCard2__content{
+    min-width:0;
+}
+
+.eduCard2{
+    width:100%;
+}
+
+.eduCard2__grid{
+    width:100%;
+}
+
+.eduCard2__list li{
+    min-width:0;
+}
+
+.eduCard2__list li,
+.eduCard2__institution{
+    overflow-wrap:anywhere;
+}
+
+.eduCard2__image{
+    min-width:0;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section{
+    width:100%;
+}
+
+.contact__head{
+    margin:0 auto 55px;
+}
+
+.contact-grid{
+    width:100%;
+    max-width:1100px;
+}
+
+.contact-info,
+.contact-form-wrapper{
+    min-width:0;
+    width:100%;
+}
+
+.contact-item__content{
+    min-width:0;
+}
+
+.contact-item__content strong{
+    overflow-wrap:anywhere;
+}
+
+.contact-form{
+    width:100%;
+}
+
+.form-row,
+.form-group,
+.input-box{
+    min-width:0;
+}
+
+.input-box input,
+.input-box textarea{
+    min-width:0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    width:100%;
+    margin:0;
+}
+
+.footer-main{
+    width:100%;
+}
+
+.footer-brand,
+.footer-column{
+    min-width:0;
+}
+
+.footer-bottom p{
+    margin:0;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:1100px){
+
+    :root{
+        --page-gutter:28px;
+        --section-space:88px;
+    }
+
+    .hero-container{
+        gap:40px;
+    }
+
+    .hero h1{
+        font-size:clamp(3.5rem, 7vw, 5.8rem);
+    }
+
+    .hero-visual{
+        min-height:480px;
+    }
+
+    .hero-image-wrapper{
+        width:min(410px, 100%);
+    }
+
+    .eduCard2__grid{
+        grid-template-columns:minmax(0, 1fr) 220px;
+        gap:24px;
+    }
+
+    .footer-main{
+        gap:35px;
+    }
+}
+
+/* =========================
+   TABLET / SMALL LAPTOP
+========================= */
+
+@media (max-width:900px){
+
+    :root{
+        --page-gutter:28px;
+        --section-space:80px;
+        --nav-offset:82px;
+    }
+
+    .hero{
+        padding-top:125px;
+    }
+
+    .hero-container{
+        min-height:auto;
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .hero-visual{
+        order:-1;
+        min-height:430px;
+    }
+
+    .hero-content{
+        text-align:center;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-description{
+        max-width:680px;
+    }
+
+    .hero-tech,
+    .hero-buttons,
+    .hero-social{
+        justify-content:center;
+    }
+
+    .hero-buttons{
+        flex-wrap:wrap;
+        height:auto;
+    }
+
+    .hero-btn{
+        flex:0 1 auto;
+    }
+
+    .eduCard2__grid{
+        grid-template-columns:minmax(0, 1fr) 210px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-main{
+        grid-template-columns:1.4fr 1fr 1fr;
+        gap:32px;
+    }
+
+    .footer-contact{
+        grid-column:1 / -1;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    :root{
+        --page-gutter:24px;
+        --section-space:70px;
+        --nav-offset:76px;
+    }
+
+    .container,
+    .hero-container,
+    .section > .container{
+        width:calc(100% - var(--page-gutter));
+        padding-left:0;
+        padding-right:0;
+    }
+
+    .navbar{
+        width:calc(100% - var(--page-gutter));
+        margin-top:10px;
+        padding:8px 12px;
+    }
+
+    nav{
+        min-height:45px;
+    }
+
+    .logo-img{
+        width:44px;
+        height:44px;
+    }
+
+    .menu-toggle{
+        flex-shrink:0;
+    }
+
+    nav ul{
+        left:0;
+        right:0;
+        width:100%;
+        box-sizing:border-box;
+        padding:10px;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:120px 0 70px;
+    }
+
+    .hero-container{
+        gap:12px;
+    }
+
+    .hero-visual{
+        min-height:360px;
+    }
+
+    .hero-image-wrapper{
+        width:min(330px, 82vw);
+    }
+
+    .hero h1{
+        font-size:clamp(3rem, 15vw, 4.8rem);
+        line-height:.92;
+        margin-bottom:18px;
+    }
+
+    .hero h2{
+        margin-bottom:14px;
+    }
+
+    .hero-description{
+        max-width:560px;
+        padding:0;
+    }
+
+    .hero-tech{
+        margin-top:20px;
+        gap:7px;
+    }
+
+    .hero-buttons{
+        width:100%;
+        margin-top:24px;
+        gap:10px;
+    }
+
+    .hero-btn{
+        width:auto;
+        min-width:0;
+        flex:1 1 0;
+        padding:12px 14px;
+    }
+
+    .hero-social{
+        margin-top:22px;
+        flex-wrap:wrap;
+    }
+
+    .scroll-indicator{
+        display:none;
+    }
+
+    /* Education */
+    .edu__head{
+        padding:0;
+        margin-bottom:38px;
+    }
+
+    .edu__subtitle{
+        padding:0;
+    }
+
+    .eduTimeline{
+        padding:0;
+    }
+
+    .eduTimeline::before{
+        left:20px;
+    }
+
+    .eduItem{
+        padding-left:52px;
+        margin-bottom:28px;
+    }
+
+    .eduItem__marker{
+        left:0;
+        top:3px;
+        width:42px;
+        height:42px;
+    }
+
+    .eduItem__icon{
+        width:30px;
+        height:30px;
+    }
+
+    .eduItem__connector{
+        left:42px;
+        width:10px;
+    }
+
+    .eduCard2{
+        padding:20px;
+    }
+
+    .eduCard2__top{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+    .eduCard2__grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .eduCard2__image{
+        order:-1;
+        height:180px;
+    }
+
+    .edu__actions{
+        flex-wrap:wrap;
+        width:100%;
+    }
+
+    .btn--small{
+        flex:1 1 130px;
+    }
+
+    /* Contact */
+    .contact__head{
+        margin:0 auto 38px;
+        padding:0;
+    }
+
+    .contact-grid{
+        gap:18px;
+    }
+
+    .contact-info,
+    .contact-form{
+        padding:20px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .contact-bottom{
+        margin-top:30px;
+    }
+
+    /* Footer */
+    .footer{
+        padding:55px 0 22px;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+        gap:30px 24px;
+        padding-bottom:38px;
+    }
+
+    .footer-brand,
+    .footer-contact{
+        grid-column:1 / -1;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width:480px){
+
+    :root{
+        --page-gutter:20px;
+        --section-space:60px;
+    }
+
+    .container,
+    .hero-container,
+    .section > .container{
+        width:calc(100% - var(--page-gutter));
+    }
+
+    .navbar{
+        width:calc(100% - var(--page-gutter));
+        padding:7px 10px;
+    }
+
+    .logo{
+        gap:8px;
+    }
+
+    .logo-img{
+        width:40px;
+        height:40px;
+    }
+
+    .logo h3{
+        font-size:.92rem;
+    }
+
+    .menu-toggle{
+        width:40px;
+        height:40px;
+    }
+
+    .hero{
+        padding-top:112px;
+        padding-bottom:60px;
+    }
+
+    .hero-visual{
+        min-height:310px;
+    }
+
+    .hero-image-wrapper{
+        width:min(285px, 80vw);
+    }
+
+    .hero h1{
+        font-size:clamp(2.7rem, 14vw, 4rem);
+    }
+
+    .hero h2{
+        font-size:1.2rem;
+    }
+
+    .hero-description{
+        font-size:.88rem;
+        line-height:1.7;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .hero-btn{
+        width:100%;
+        flex:none;
+    }
+
+    .hero-social span{
+        width:100%;
+        margin:0 0 3px;
+        text-align:center;
+    }
+
+    .eduTimeline::before{
+        left:17px;
+    }
+
+    .eduItem{
+        padding-left:45px;
+    }
+
+    .eduItem__marker{
+        width:36px;
+        height:36px;
+    }
+
+    .eduItem__icon{
+        width:26px;
+        height:26px;
+    }
+
+    .eduItem__connector{
+        left:36px;
+    }
+
+    .eduCard2{
+        padding:17px;
+        border-radius:16px;
+    }
+
+    .eduCard2__image{
+        height:165px;
+    }
+
+    .eduCard2__title{
+        font-size:1.12rem;
+    }
+
+    .eduCard2__list li{
+        font-size:.8rem;
+    }
+
+    .contact__title{
+        font-size:clamp(2.15rem, 10vw, 2.7rem);
+    }
+
+    .contact__subtitle{
+        font-size:.86rem;
+    }
+
+    .contact-info,
+    .contact-form{
+        padding:17px;
+    }
+
+    .contact-item{
+        gap:9px;
+    }
+
+    .contact-item__icon{
+        width:38px;
+        height:38px;
+    }
+
+    .contact-item__content strong{
+        font-size:.68rem;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr;
+        gap:28px;
+    }
+
+    .footer-brand,
+    .footer-contact{
+        grid-column:auto;
+    }
+
+    .footer-bottom{
+        text-align:center;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .footer-bottom-links{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+}
+
+/* =========================
+   VERY SMALL DEVICES
+========================= */
+
+@media (max-width:360px){
+
+    .logo h3{
+        font-size:.84rem;
+    }
+
+    .hero{
+        padding-top:108px;
+    }
+
+    .hero-image-wrapper{
+        width:245px;
+    }
+
+    .hero-tech span{
+        font-size:.68rem;
+        padding:6px 8px;
+    }
+
+    .eduCard2{
+        padding:15px;
+    }
+
+    .edu__actions{
+        flex-direction:column;
+    }
+
+    .btn--small{
+        width:100%;
+        flex:1 1 auto;
+    }
+}
+
+/* =========================
+   ACCESSIBILITY / MOTION
+========================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+}
+
+/* Never allow long URLs/text to break the layout */
+p,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+span,
+strong{
+    overflow-wrap:break-word;
+}
+
+/* Avoid accidental horizontal overflow from animated elements */
+.reveal,
+.hero-glow,
+.form-glow,
+.splash-bg{
+    max-width:100%;
+}
