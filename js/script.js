@@ -98,3 +98,45 @@ window.addEventListener("load", () => {
     }, 2200);
 
 });
+
+
+
+
+
+
+
+
+
+
+
+(() => {
+    const root = document.documentElement;
+    const toggle = document.getElementById("themeToggle");
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+
+    const applyTheme = (theme) => {
+        root.setAttribute("data-theme", theme);
+
+        if (toggle) {
+            const dark = theme === "dark";
+            toggle.setAttribute("aria-pressed", String(dark));
+            toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+            toggle.innerHTML = dark
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        }
+
+        if (metaTheme) {
+            metaTheme.setAttribute("content", theme === "dark" ? "#050a14" : "#edf6ff");
+        }
+    };
+
+    const saved = localStorage.getItem("sarbeswar-theme");
+    applyTheme(saved === "dark" ? "dark" : "light");
+
+    toggle?.addEventListener("click", () => {
+        const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        localStorage.setItem("sarbeswar-theme", next);
+        applyTheme(next);
+    });
+})();

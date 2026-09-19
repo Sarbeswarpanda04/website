@@ -380,6 +380,10 @@
                     <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
                         <i class="fa-solid fa-bars"></i>
                     </button>
+                    <button class="theme-toggle" id="themeToggle" type="button"
+                        aria-label="Switch to dark mode" aria-pressed="false">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
 
                     <ul id="navMenu">
                         <li class="menu is-active">
@@ -408,88 +412,248 @@
 
 
     <main>
-        <section class="hero" id="home">
-            <div class="hero-container">
+<section class="hero" id="home" aria-label="Sarbeswar Panda Software Developer">
 
-                <!-- LEFT CONTENT -->
-                <div class="hero-content">
+    <!-- Background effects -->
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--one" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--two" aria-hidden="true"></div>
 
-                    <div class="hero-badge">
-                        <span class="status-dot"></span>
-                        Available for opportunities
-                    </div>
+    <div class="hero-container">
 
-                    <p class="hero-intro">
-                        Hello, I'm
-                    </p>
+        <!-- =========================================
+             LEFT CONTENT
+        ========================================== -->
+        <div class="hero-content">
 
-                    <h1>
-                        Sarbeswar 
-                        <span>Panda</span>
-                    </h1>
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                <span>Available for opportunities</span>
+            </div>
 
-                    <h2>
-                        Software Developer
-                        <span class="typing-dot">.</span>
-                    </h2>
+            <p class="hero-intro">Hello, I'm</p>
 
-                    <div class="hero-buttons">
-                        <a href="#education" class="hero-btn primary">
-                            View My Work
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+            <h1>
+                Sarbeswar
+                <span>Panda</span>
+            </h1>
 
-                        <a href="assets/resume/sarbeswar-resume.pdf" class="hero-btn secondary" target="_blank">
-                            Download Resume
-                            <i class="fa-solid fa-download"></i>
-                        </a>
-                    </div>
+            <h2>
+                Software Developer
+                <span class="typing-dot">|</span>
+            </h2>
 
-                    <div class="hero-social">
-                        <span>Connect with me</span>
+            
 
-                        <a href="https://github.com/Sarbeswarpanda04" target="_blank" aria-label="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
+            <!-- Technology chips -->
+            <div class="hero-tech" aria-label="Core technologies">
 
-                        <a href="https://www.linkedin.com/in/sarbeswar-panda/" target="_blank" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
+                <span>
+                    <i class="fa-brands fa-react"></i>
+                    React
+                </span>
 
-                        <a href="mailto:hello@sarbeswarpanda.in" aria-label="Email">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
-                    </div>
+                <span>
+                    <i class="fa-brands fa-node-js"></i>
+                    Node.js
+                </span>
 
-                </div>
+                <span>
+                    <i class="fa-brands fa-js"></i>
+                    JavaScript
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-chart-column"></i>
+                    DSA
+                </span>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="hero-buttons">
+
+                <a href="#projects" class="hero-btn hero-btn--primary">
+                    <span>View My Work</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a
+                    href="assets/resume/sarbeswar-resume.pdf"
+                    class="hero-btn hero-btn--secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>Download Resume</span>
+                    <i class="fa-solid fa-download"></i>
+                </a>
+
+            </div>
+
+            <!-- Social -->
+            <div class="hero-social">
+
+                <span>Connect with me</span>
+
+                <a
+                    href="https://github.com/Sarbeswarpanda04"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/sarbeswar-panda/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a
+                    href="mailto:sarbeswar@sarbeswarpanda.me"
+                    aria-label="Email"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+            </div>
+
+        </div>
 
 
-                <!-- RIGHT VISUAL -->
-                <div class="hero-visual">
+        <!-- =========================================
+             RIGHT VISUAL
+        ========================================== -->
+        <div class="hero-visual">
 
-                    <div class="hero-glow"></div>
+            <!-- Handwriting -->
+            <div class="hero-handwriting" aria-hidden="true">
+                <span>Welcome</span>
+                <span>To My</span>
+                <span>Website</span>
+            </div>
 
-                    <div class="hero-image-wrapper">
 
-                        <div class="hero-ring ring-one"></div>
-                        <div class="hero-ring ring-two"></div>
+            <!-- Quote -->
+            <div class="hero-quote">
+                <p>
+                    “Turning ideas<br>
+                    into real-world<br>
+                    solutions.”
+                </p>
 
-                        <div class="hero-image">
-                            <img src="https://cdn.sarbeswarpanda.in/Logo/sarbeswar-logo.png" alt="Sarbeswar Panda Software Developer">
-                        </div>
+                <span></span>
+            </div>
 
-                    </div>
 
+            <!-- Main glow -->
+            <div class="hero-glow" aria-hidden="true"></div>
+
+
+            <!-- Circular image area -->
+            <div class="hero-image-wrapper">
+
+                <div class="hero-ring ring-one"></div>
+                <div class="hero-ring ring-two"></div>
+                <div class="hero-ring ring-three"></div>
+
+                <div class="hero-image">
+
+                    <!-- PUT YOUR PNG HERE -->
+                    <img
+                        src="https://cdn.sarbeswarpanda.in/images/hero-profile.png"
+                        alt="Sarbeswar Panda, Software Developer"
+                        width="525"
+                        height="840"
+                        fetchpriority="high"
+                    >
 
                 </div>
 
             </div>
 
-            <div class="scroll-indicator">
-                <span>Scroll to explore</span>
-                <i class="fa-solid fa-arrow-down"></i>
+
+            <!-- Clean Code card -->
+            <!-- <div class="hero-card hero-card--code">
+
+                <div class="hero-card-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div class="hero-card-text">
+                    <strong>Experience</strong>
+                    <span>1+</span>
+                </div>
+
+            </div> -->
+
+
+            <!-- Technology stack -->
+            <div class="hero-stack" aria-label="Technology stack">
+
+                <div class="hero-stack-item">
+                    <i class="fa-brands fa-react"></i>
+                    <span>React</span>
+                </div>
+
+                <div class="hero-stack-item">
+                    <i class="fa-brands fa-node-js"></i>
+                    <span>Node.js</span>
+                </div>
+
+                <div class="hero-stack-item">
+                    <i class="fa-brands fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="hero-stack-item">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>DSA</span>
+                </div>
+
             </div>
-        </section>
+
+
+            <!-- Passion card -->
+            <!-- <div class="hero-card hero-card--passion">
+
+                <div class="passion-icon">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
+
+                <div class="passion-content">
+                    <strong>100%</strong>
+                    <span>
+                        Passionate about<br>
+                        creating impact
+                    </span>
+                </div>
+
+            </div> -->
+
+        </div>
+
+    </div>
+
+
+    <!-- Scroll -->
+    <div class="scroll-indicator">
+
+        <span class="scroll-mouse">
+            <i></i>
+        </span>
+
+        <span>Scroll Down</span>
+
+        <i class="fa-solid fa-minus"></i>
+
+    </div>
+
+</section>
 
 
 
@@ -1119,6 +1283,7 @@
 
 
     <script src="js/script.js"></script>
+    <script src="js/theme.js" defer></script>
 </body>
 
 </html>
