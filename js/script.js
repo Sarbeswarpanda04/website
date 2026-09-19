@@ -104,6 +104,118 @@ window.addEventListener("load", () => {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    const track = document.querySelector(".projects-track");
+    const nextBtn = document.querySelector(".projects-arrow--next");
+    const prevBtn = document.querySelector(".projects-arrow--prev");
+    const progress = document.querySelector(".projects-progress span");
+
+    if (!track) return;
+
+
+    /* =========================================
+       SCROLL AMOUNT
+    ========================================= */
+
+    const getScrollAmount = () => {
+
+        const card = track.querySelector(".project-card");
+
+        if (!card) return 400;
+
+        const gap = parseFloat(
+            getComputedStyle(track).gap
+        ) || 22;
+
+        return card.offsetWidth + gap;
+    };
+
+
+    /* =========================================
+       NEXT
+    ========================================= */
+
+    nextBtn?.addEventListener("click", () => {
+
+        track.scrollBy({
+            left: getScrollAmount(),
+            behavior: "smooth"
+        });
+
+    });
+
+
+    /* =========================================
+       PREVIOUS
+    ========================================= */
+
+    prevBtn?.addEventListener("click", () => {
+
+        track.scrollBy({
+            left: -getScrollAmount(),
+            behavior: "smooth"
+        });
+
+    });
+
+
+    /* =========================================
+       PROGRESS BAR
+    ========================================= */
+
+    const updateProgress = () => {
+
+        const maxScroll =
+            track.scrollWidth - track.clientWidth;
+
+        if (maxScroll <= 0) {
+
+            if (progress) {
+                progress.style.width = "100%";
+            }
+
+            return;
+        }
+
+
+        const percentage =
+            (track.scrollLeft / maxScroll) * 75 + 25;
+
+
+        if (progress) {
+
+            progress.style.width =
+                `${Math.min(100, percentage)}%`;
+
+        }
+
+    };
+
+
+    track.addEventListener(
+        "scroll",
+        updateProgress,
+        { passive: true }
+    );
+
+
+    window.addEventListener(
+        "resize",
+        updateProgress
+    );
+
+
+    updateProgress();
+
+});
+
+
+
+
+
+
+
 
 
 
