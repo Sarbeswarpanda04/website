@@ -79,6 +79,78 @@ if (footerYear) {
 
 
 /* =================================
+   CERTIFICATE MODAL
+================================= */
+
+(() => {
+    const modal = document.getElementById("certModal");
+
+    if (!modal) return;
+
+    const modalImg = document.getElementById("certModalImg");
+    const modalCaption = document.getElementById("certModalCaption");
+    let lastFocused = null;
+
+    const openModal = (src, caption) => {
+        modalImg.src = src;
+        modalImg.alt = caption || "Certificate";
+        modalCaption.textContent = caption || "";
+
+        lastFocused = document.activeElement;
+
+        modal.hidden = false;
+        // force reflow so the transition runs
+        void modal.offsetWidth;
+        modal.classList.add("is-open");
+
+        document.body.style.overflow = "hidden";
+
+        modal.querySelector(".cert-modal__close")?.focus();
+    };
+
+    const closeModal = () => {
+        modal.classList.remove("is-open");
+        document.body.style.overflow = "";
+
+        const onEnd = () => {
+            modal.hidden = true;
+            modalImg.src = "";
+            modal.removeEventListener("transitionend", onEnd);
+        };
+
+        modal.addEventListener("transitionend", onEnd);
+
+        lastFocused?.focus?.();
+    };
+
+    // Open when a certificate link is clicked
+    document.querySelectorAll(".expCard__certificate").forEach((link) => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const src = link.getAttribute("href")
+                || link.querySelector("img")?.getAttribute("src");
+
+            const caption = link.querySelector("img")?.getAttribute("alt");
+
+            if (src) openModal(src, caption);
+        });
+    });
+
+    // Close on backdrop / close button
+    modal.querySelectorAll("[data-cert-close]").forEach((el) => {
+        el.addEventListener("click", closeModal);
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !modal.hidden) closeModal();
+    });
+})();
+
+
+
+/* =================================
    SPLASH SCREEN
 ================================= */
 
