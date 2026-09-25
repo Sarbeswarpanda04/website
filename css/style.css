@@ -8465,3 +8465,41 @@ body[data-theme="dark"] .footer-signature {
     filter: invert(1) brightness(1.8);
     opacity: .95;
 }
+
+
+/* ================================
+   PERSONAL DETAILS SIGNATURE
+================================ */
+
+.personal-info-signature {
+    display: block;
+    width: 220px;
+    max-width: 70%;
+    height: auto;
+    margin: 4px 0 22px;
+    opacity: .9;
+}
+
+.signature-img {
+    width: 210px;
+    max-width: 60%;
+    height: auto;
+    opacity: .9;
+    /* dark ink suits the light theme by default */
+}
+
+html[data-theme="dark"] .signature-img,
+body[data-theme="dark"] .signature-img {
+    filter: invert(1) brightness(1.8);
+    opacity: .95;
+}
+
+@media (max-width: 600px) {
+    .personal-info-signature {
+        align-items: center;
+    }
+
+    .signature-img {
+        max-width: 75%;
+    }
+}
